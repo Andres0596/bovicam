@@ -1,0 +1,12 @@
+[
+  { "_id": "CH001", "nombre": "Angus", "saldo": "1" },
+  { "_id": "CH002", "nombre": "Hereford", "saldo": "1" },
+  { "_id": "CH003", "nombre": "Simmental", "saldo": "1" },
+  { "_id": "CH004", "nombre": "Limousin", "saldo": "1" },
+  { "_id": "CH005", "nombre": "Charolais", "saldo": "1" },
+  { "_id": "CH006", "nombre": "Holstein", "saldo": "1" },
+  { "_id": "CH007", "nombre": "Brahman", "saldo": "1" },
+  { "_id": "CH008", "nombre": "Gyr", "saldo": "1" },
+  { "_id": "CH009", "nombre": "Angus", "saldo": "1" },
+  { "_id": "CH010", "nombre": "Limousin", "saldo": "1" }
+]

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoviCam</title>
+    <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../data-tables/datatables.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <!--  INICIO SIDEBAR -->
+    <div class="menu">
+      <i class="bi bi-list"></i>
+      <i class="bi bi-x-lg"></i>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img id="logo" src="../img/logo.svg" alt="logo" />
+        <span>BoviCam</span>
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li>
+            <button
+              type="button"
+              class="boton"
+              data-bs-toggle="modal"
+              data-bs-target="#addModal"
+            >
+              <i class="bi bi-plus-square"></i><span>Agregar nuevo</span>
+            </button>
+          </li>
+          <li>
+            <button id="btnDashboard" type="button" class="nofocus">
+              <i class="bi bi-speedometer"></i><span>Dashboard</span>
+            </button>
+          </li>
+          <li>
+            <button id="btnStock" type="button" class="nofocus">
+              <i class="bi bi-archive-fill"></i><span>Inventario</span>
+            </button>
+          </li>
+          <li>
+            <button id="btnActivities" type="button" class="nofocus">
+              <i class="bi bi-list-task"></i><span>Actividades</span>
+            </button>
+          </li>
+          <li>
+            <button id="btnSettings" type="button" class="nofocus">
+              <i class="bi bi-gear-fill"></i><span>Ajustes</span>
+            </button>
+          </li>
+          <li>
+            <button id="btnHelp" type="button" class="nofocus">
+              <i class="bi bi-question-square-fill"></i><span>Ayuda</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div>
+        <!-- TODO: modo oscuro -->
+        <hr />
+        <div class="user">
+          <img src="../img/user.png" alt="" />
+          <div class="user-info">
+            <div class="name-email">
+              <span id="usuarioreg" class="name"></span>
+              <span class="email">useremail@gmail.com</span>
+            </div>
+            <button id="btnsalir" class="option-button">
+              <i class="bi bi-box-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN SIDEBAR -->
+
+    <!-- INICIO CONTENIDO PRINCIPAL -->
+    <main>
+      <table id="tabledatos" class="table table-striped rounded">
+        <thead id="tablehead" class="bg-info">
+          <!-- contenido head -->
+        </thead>
+        <tbody id="tablecontenido">
+          <!-- contenido body -->
+        </tbody>
+      </table>
+    </main>
+    <!-- FIN CONTENIDO PRINCIPAL -->
+
+    <!-- INICIO MODAL POST Y PATCH-->
+    <div class="container-fluid">
+      <div
+        id="addModal"
+        class="modal fade"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Nuevo Registro BoviCam</h5>
+              <button
+                type="button"
+                class="btn-close cancelar"
+                data-bs-dismiss="modal"
+                aria-label="close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="formulario" method="POST">
+                <h2 class="text-center">Información nuevo bovino</h2>
+                <div class="mb-3">
+                  <label for="id_chapeta" class="form-label">Chapeta</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="id_chapeta"
+                    name="id_chapeta"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    name="nombre"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="marcas" class="form-label">Marcas</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="marcas"
+                    name="marcas"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="color" class="form-label">Color</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="color"
+                    name="color"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="sexo" class="form-label">Sexo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="sexo"
+                    name="sexo"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="peso" class="form-label">Peso</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="peso"
+                    name="peso"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="id_lote" class="form-label">No. Lote</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="id_lote"
+                    name="id_lote"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="id_nacimiento" class="form-label"
+                    >Codigo nacimiento</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="id_nacimiento"
+                    name="id_nacimiento"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="id_destete" class="form-label"
+                    >Codigo destete</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="id_destete"
+                    name="id_destete"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="raza" class="form-label">Raza</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="raza"
+                    name="raza"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="procedencia" class="form-label"
+                    >Procedencia</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="procedencia"
+                    name="procedencia"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="id_actividades" class="form-label"
+                    >Codigo actividades</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="id_actividades"
+                    name="id_actividades"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="observaciones" class="form-label"
+                    >Observaciones</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="observaciones"
+                    name="observaciones"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger cancelar"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button
+                id="btnAdd"
+                type="button"
+                class="btn btn-success"
+                name="btnregistrar"
+                value="Ok"
+                form="formulario"
+                data-bs-dismiss="modal"
+              >
+                Registrar
+              </button>
+              <button
+                id="btnUpdate"
+                type="button"
+                class="btn btn-warning"
+                disabled
+              >
+                Modificar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN MODAL POST Y PATCH -->
+
+    <!-- INICIO MODAL CARD -->
+    <div class="container-fluid">
+      <div
+        id="fichaModal"
+        class="modal fade"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Ficha del Bovino</h5>
+              <button
+                type="button"
+                class="btn-close cancelar"
+                data-bs-dismiss="modal"
+                aria-label="close"
+              ></button>
+            </div>
+            <div
+              id="cuerpomodal"
+              class="modal-body d-flex justify-content-center"
+            >
+              <!-- CONTENIDO CARD -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger cancelar"
+                data-bs-dismiss="modal"
+              >
+                Salir
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN MODAL CARD-->
+
+    <script src="../data-tables/jquery-3.7.1.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../data-tables/datatables.min.js"></script>
+    <script src="../javascript/cliente_bovinos.js"></script>
+    <script src="../javascript/cerrar.js"></script>
+  </body>
+</html>

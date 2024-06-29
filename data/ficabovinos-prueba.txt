@@ -1,0 +1,92 @@
+[
+  {
+    "id_chapeta": "CH001",
+    "nombre": "vaca",
+    "color": "Negro",
+    "sexo": "Macho",
+    "peso": 350,
+    "id_lote": "1",
+    "raza": "Angus"
+  },
+  {
+    "id_chapeta": "CH002",
+    "nombre": "vaca",
+    "color": "Blanco y Marrón",
+    "sexo": "Hembra",
+    "peso": 300,
+    "id_lote": "1",
+    "raza": "Hereford"
+  },
+  {
+    "id_chapeta": "CH003",
+    "nombre": "vaca",
+    "color": "Rojo",
+    "sexo": "Macho",
+    "peso": 400,
+    "id_lote": "1",
+    "raza": "Simmental"
+  },
+  {
+    "id_chapeta": "CH004",
+    "nombre": "vaca",
+    "color": "Gris",
+    "sexo": "Hembra",
+    "peso": 280,
+    "id_lote": "1",
+    "raza": "Limousin"
+  },
+  {
+    "id_chapeta": "CH005",
+    "nombre": "vaca",
+    "color": "Negro y Blanco",
+    "sexo": "Macho",
+    "peso": 380,
+    "id_lote": "1",
+    "raza": "Charolais"
+  },
+  {
+    "id_chapeta": "CH006",
+    "nombre": "vaca",
+    "color": "Blanco",
+    "sexo": "Hembra",
+    "peso": 320,
+    "id_lote": "1",
+    "raza": "Holstein"
+  },
+  {
+    "id_chapeta": "CH007",
+    "nombre": "vaca",
+    "color": "Marrón",
+    "sexo": "Macho",
+    "peso": 370,
+    "id_lote": "1",
+    "raza": "Brahman"
+  },
+  {
+    "id_chapeta": "CH008",
+    "nombre": "vaca",
+    "color": "Negro",
+    "sexo": "Hembra",
+    "peso": 290,
+    "id_lote": "1",
+    "raza": "Gyr"
+  },
+  {
+    "id_chapeta": "CH009",
+    "nombre": "vaca",
+    "color": "Blanco y Negro",
+    "sexo": "Macho",
+    "peso": 360,
+    "id_lote": "1",
+    "raza": "Angus"
+  },
+  {
+    "id_chapeta": "CH010",
+    "nombre": "vaca",
+    "color": "Negro",
+    "sexo": "Hembra",
+    "peso": 310,
+    "id_lote": "1",
+    "raza": "Limousin"
+  }
+]

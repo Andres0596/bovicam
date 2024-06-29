@@ -1,0 +1,18 @@
+GET http://localhost:3000/usuarios
+
+###
+
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+    "id": 6,
+    "nombre": "fredy",
+    "apellido": "rojas",
+    "edad": 40,
+    "contacto": "fredy@gmail.com",
+    "programa": "adso",
+    "rol": "instructor",
+    "usuario": "instructor",
+    "contrasenia": "123456"
+}
