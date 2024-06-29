@@ -4,11 +4,15 @@ const PUERTO = 3000;
 const express = require("express");
 // IMPORTACION DEL MODULO PATH
 const path = require("path");
+//IMPORTACION DEL MODULO DE CORS
+const cors = require('cors')
 // IMPORTACION DEL MODULO ROUTER BOVINOS.JS
 const bovinosRouter = require("./routes/bovinos/bovinos");
 const usuariosRouter = require("./routes/usuarios/usuarios");
 // INSTANCIACION DE OBJETO DE TIPO EXPRESS
 const app = express();
+
+app.use(cors())
 
 // MIDDELWARE PARA CONVERSION DE TODA REQ Y RES A JSON
 app.use(express.json());
